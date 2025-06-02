@@ -1,4 +1,4 @@
-# 占位符名称 (%acpapi_你的名称%)
+# 占位符名称 (%acpapi_你的名称%, 此处为test)
 test:
   - priority: 50 # 匹配的优先级 (越高越先匹配)
     condition: "%vault_eco_balance% > 10000" # 通过匹配的条件 (支持PlaceholderAPI, 要求返回 Boolean (bool) 值) 若匹配则不会进行后面的匹配
