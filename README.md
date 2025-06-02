@@ -25,6 +25,24 @@ English | [简体中文](./README_zh.md)
 3. Open the custom placeholder configuration file `plugins/AConditionalPlaceholders/placeholders.yml` and configure as needed.
 4. Execute `/acp reload` command to activate the configured custom placeholders.
 
+Example configuration file (`placeholders.yml`):
+
+```yaml
+# 占位符名称 (%acpapi_你的名称%, 此处为test)
+test:
+  - priority: 50 # 匹配的优先级 (越高越先匹配)
+    condition: "%vault_eco_balance% > 10000" # 通过匹配的条件 (支持PlaceholderAPI, 要求返回 Boolean (bool) 值) 若匹配则不会进行后面的匹配
+    result: "贵族玩家" # 若匹配则返回的占位符的对应结果
+  - priority: 10
+    condition: "%vault_eco_balance% > 1000"
+    result: "小康玩家"
+  - priority: 2
+    result: "if (%vault_eco_balance% == 0) '新玩家'" # 返回的结果支持表达式 (表达式中字符串要用''框住表示)
+  - priority: 1
+    result: "普通玩家"
+
+```
+
 ---
 
 ## 📄 License
