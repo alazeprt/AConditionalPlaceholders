@@ -30,5 +30,3 @@ English | [简体中文](./README_zh.md)
 ## 📄 License
 
 This plugin is open-sourced under the **LGPL-2.1** license. Please comply with the relevant regulations. All final interpretations belong to *alazeprt*.
-
----
