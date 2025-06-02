@@ -4,3 +4,4 @@ main: top.alazeprt.acpapi.ACPPlugin
 api-version: 1.13
 authors: [ alazeprt ]
 depend: [ PlaceholderAPI ]
+folia-supported: true
