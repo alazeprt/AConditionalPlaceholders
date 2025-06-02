@@ -1,6 +1,5 @@
 package top.alazeprt.acpapi.config;
 
-import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.jetbrains.annotations.NotNull;
@@ -18,12 +17,13 @@ import java.util.List;
 public class ACPConfig {
     private final ACPPlugin plugin;
     private final List<ACPMatcher> matcherList = new ArrayList<>();
-    
+
     public ACPConfig(ACPPlugin plugin) {
         this.plugin = plugin;
     }
 
     public void loadConfig() {
+        matcherList.clear();
         File configFile = new File(plugin.getDataFolder(), "config.yml");
         if (!configFile.exists()) {
             plugin.saveResource("config.yml", false);

@@ -5,7 +5,6 @@ import org.bukkit.OfflinePlayer;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.expression.Expression;
 import org.springframework.expression.ExpressionParser;
-import org.springframework.expression.spel.standard.SpelExpression;
 import org.springframework.expression.spel.standard.SpelExpressionParser;
 
 import java.util.List;
@@ -37,11 +36,10 @@ public record ACPMatcher(String name, @NotNull List<ACPCondition> conditions) {
         try {
             Expression expression = parser.parseExpression(originalResult);
             Object result = expression.getValue(player);
-            System.out.println("result: " + result);
             if (result instanceof String stringResult) {
                 return stringResult;
             }
-        } catch (Exception ignored) {System.out.println(ignored);}
+        } catch (Exception ignored) {}
         return originalResult;
     }
 }

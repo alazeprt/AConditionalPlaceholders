@@ -6,7 +6,7 @@
 
 ## 📝 介绍
 
-**AConditionalPlaceholders** 是一个灵活的Minecraft Spigot插件, 旨在让管理员基于已有占位符的数据创建自定义占位符, 并在游戏内呈现, 通过配置简单的规则, 你可以创建多样的条件判断系统, 根据玩家的游戏状态(其它占位符, 如玩家余额 `%vault_eco_balance%`)来返回不同的内容
+**AConditionalPlaceholders** 是一个灵活的Minecraft Spigot插件, 旨在让管理员基于已有占位符的数据创建自定义占位符, 并在游戏内呈现, 通过配置简单的规则, 你可以创建多样的条件判断系统, 根据玩家的游戏状态(其它占位符, 如玩家余额`%vault_eco_balance%`)来返回不同的内容
 
 ---
 
@@ -23,7 +23,7 @@
 1. 下载前置插件 [`PlaceholderAPI`](https://www.spigotmc.org/resources/placeholderapi.6245/) 至服务器 `plugins` 文件夹, 并重启服务器, 确保插件正常运行
 2. 下载 [本插件](https://github.com/alazeprt/AConditionalPlaceholders/releases/latest) 至服务器 `plugins` 文件夹, 并重启服务器
 3. 打开自定义占位符文件 `plugins/AConditionalPlaceholders/placeholders.yml` 按需配置
-4. 重启服务器, 即可使用已配置的自定义占位符
+4. 执行 `/acp reload` 指令后, 即可使用已配置的自定义占位符
 
 ---
 

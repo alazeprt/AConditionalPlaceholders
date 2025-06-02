@@ -5,3 +5,11 @@ api-version: 1.13
 authors: [ alazeprt ]
 depend: [ PlaceholderAPI ]
 folia-supported: true
+commands:
+  aconditionalplaceholders:
+    description: Main command for AConditionalPlaceholders
+    aliases: [ acp, acpapi, conditionalplaceholders ]
+permissions:
+  acp.reload:
+    description: Allows the user to reload the plugin
+    default: op

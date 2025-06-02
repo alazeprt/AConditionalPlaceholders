@@ -23,7 +23,7 @@ English | [简体中文](./README_zh.md)
 1. Download the prerequisite plugin [`PlaceholderAPI`](https://www.spigotmc.org/resources/placeholderapi.6245/) to your server's `plugins` folder, then restart the server to ensure it runs properly.
 2. Download this plugin to your server's `plugins` folder and restart the server.
 3. Open the custom placeholder configuration file `plugins/AConditionalPlaceholders/placeholders.yml` and configure as needed.
-4. Restart the server to activate the configured custom placeholders.
+4. Execute `/acp reload` command to activate the configured custom placeholders.
 
 ---
 
