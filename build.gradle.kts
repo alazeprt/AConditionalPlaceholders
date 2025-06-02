@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "top.alazeprt.acpapi"
-version = "1.0-SNAPSHOT"
+version = "1.0`"
 
 repositories {
     maven("https://repo.extendedclip.com/releases/")
