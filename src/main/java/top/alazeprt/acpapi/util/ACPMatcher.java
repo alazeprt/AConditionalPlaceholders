@@ -35,10 +35,9 @@ public record ACPMatcher(String name, @NotNull List<ACPCondition> conditions) {
         ExpressionParser parser = new SpelExpressionParser();
         try {
             Expression expression = parser.parseExpression(originalResult);
+            System.out.println(originalResult);
             Object result = expression.getValue(player);
-            if (result instanceof String stringResult) {
-                return stringResult;
-            }
+            return String.valueOf(result);
         } catch (Exception ignored) {}
         return originalResult;
     }
