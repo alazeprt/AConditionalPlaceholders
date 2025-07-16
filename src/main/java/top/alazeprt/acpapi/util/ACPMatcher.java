@@ -9,7 +9,15 @@ import org.springframework.expression.spel.standard.SpelExpressionParser;
 
 import java.util.List;
 
-public record ACPMatcher(String name, @NotNull List<ACPCondition> conditions) {
+public class ACPMatcher {
+    public String name;
+    public List<ACPCondition> conditions;
+
+    public ACPMatcher(String name, @NotNull List<ACPCondition> conditions) {
+        this.name = name;
+        this.conditions = conditions;
+    }
+
     public String match(@NotNull OfflinePlayer player) {
         for (ACPCondition condition : conditions) {
             if (condition.condition() == null) {
@@ -20,8 +28,8 @@ public record ACPMatcher(String name, @NotNull List<ACPCondition> conditions) {
             try {
                 Expression expression = parser.parseExpression(conditionString);
                 Object result = expression.getValue(player);
-                if (result instanceof Boolean booleanResult && booleanResult) {
-                    return parseResult(player, condition);
+                if (result instanceof Boolean) {
+                    if ((Boolean) result) return parseResult(player, condition);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -36,8 +44,8 @@ public record ACPMatcher(String name, @NotNull List<ACPCondition> conditions) {
         try {
             Expression expression = parser.parseExpression(originalResult);
             Object result = expression.getValue(player);
-            if (result instanceof String stringResult) {
-                return stringResult;
+            if (result instanceof String) {
+                return (String) result;
             }
         } catch (Exception ignored) {}
         return originalResult;

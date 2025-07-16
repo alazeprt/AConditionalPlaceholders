@@ -15,5 +15,5 @@ repositories {
 dependencies {
     compileOnly("org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT")
     compileOnly("me.clip:placeholderapi:2.11.6")
-    implementation("org.springframework:spring-expression:6.2.7")
+    implementation("org.springframework:spring-expression:5.3.39")
 }

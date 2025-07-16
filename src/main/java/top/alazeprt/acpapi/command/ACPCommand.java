@@ -9,6 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import top.alazeprt.acpapi.ACPPlugin;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ACPCommand implements CommandExecutor, TabCompleter {
@@ -38,6 +39,6 @@ public class ACPCommand implements CommandExecutor, TabCompleter {
 
     @Override
     public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String alias, @NotNull String[] args) {
-        return List.of();
+        return new ArrayList<>();
     }
 }

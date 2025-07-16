@@ -5,6 +5,7 @@ import org.bukkit.OfflinePlayer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import top.alazeprt.acpapi.ACPPlugin;
+import top.alazeprt.acpapi.util.ACPMatcher;
 
 public class ACPExpansion extends PlaceholderExpansion {
     private final ACPPlugin plugin;
@@ -30,8 +31,8 @@ public class ACPExpansion extends PlaceholderExpansion {
 
     @Override
     public @Nullable String onRequest(OfflinePlayer player, @NotNull String params) {
-        for (var matcher : plugin.matchers) {
-            if (matcher.name().equals(params)) {
+        for (ACPMatcher matcher : plugin.matchers) {
+            if (matcher.name.equals(params)) {
                 return matcher.match(player);
             }
         }

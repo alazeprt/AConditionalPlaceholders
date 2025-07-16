@@ -41,7 +41,7 @@ public class ACPConfig {
         placeholders.getKeys(false).forEach(key -> {
             List<ACPCondition> conditions = new ArrayList<>();
             placeholders.getList(key).forEach(value -> {
-                var section = (LinkedHashMap<String, Object>) value;
+                LinkedHashMap<String, Object> section = (LinkedHashMap<String, Object>) value;
                 int priority = Integer.parseInt(section.get("priority").toString());
                 @Nullable String condition = section.get("condition") == null ? null : section.get("condition").toString();
                 String result = section.get("result").toString();
